@@ -17,3 +17,10 @@ resource "google_storage_bucket" "other_bucket" {
   location = var.region
   labels   = var.labels
 }
+
+# another bucket
+resource "google_storage_bucket" "other_bucket2" {
+  name     = "${lookup(var.project, var.env)}-terratest3"
+  location = var.region
+  labels   = var.labels
+}
